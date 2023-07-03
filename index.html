@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<style>
+    .threesixty-frame{
+        width: 100%;
+    }
+    .threesixty-wrapper {
+        position: relative;
+    }
+    .carusel-car {
+        width: 100%;
+        height: 120px;
+        position: absolute;
+        display: flex;
+        bottom: -40px;
+        left: 28px;
+        
+    }
+    .carusel-car img {
+        height: 100%;
+        cursor: pointer;
+    }
+    .active{
+        border: 1px solid blue;
+    }
+</style>
+<body>
+    <div class="container">
+
+        <div class="threesixty-wrapper ">
+    
+            <div class="threesixty" data-path="./img/{index}.jpg" data-count="51">
+                <!-- put your preloader here -->
+                <div class="ui-spinner">
+                    <span class="side side-left">
+                        <span class="fill"></span>
+                    </span>
+                    <span class="side side-right">
+                        <span class="fill"></span>
+                    </span>
+                </div>
+                <!-- end preloader -->
+            </div>
+           
+            
+        </div>
+        
+    </div>
+   
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="./jquery.plugin.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                var $threeSixty = $('.threesixty');
+
+                $threeSixty.threeSixty({
+                    dragDirection: 'horizontal',
+                    useKeys: true,
+                    draggable: true
+                });
+            });
+        </script>
+
+</body>
+</html>
